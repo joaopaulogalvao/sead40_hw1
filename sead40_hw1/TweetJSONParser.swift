@@ -1,5 +1,5 @@
 //
-//  Tweet.swift
+//  TweetJSONParser.swift
 //  sead40_hw1
 //
 //  Created by Joao Paulo Galvao Alves on 8/4/15.
@@ -8,13 +8,8 @@
 
 import Foundation
 
-struct Tweet {
-  
-  let text : String?
-  let author : String
-  let username : String
-  let id : String
-  let profileImageURL : String
-
+class TweetJSONParser {
+  class func tweetsFromJSONData (jsonData : NSData) -> [Tweet]? {
+  return nil
+  }
 }
-
