@@ -13,6 +13,7 @@
 		6C22FD0B1B711DB900D0A943 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C22FD0A1B711DB900D0A943 /* Images.xcassets */; };
 		6C22FD0E1B711DB900D0A943 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C22FD0C1B711DB900D0A943 /* LaunchScreen.xib */; };
 		6C22FD1A1B711DB900D0A943 /* sead40_hw1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD191B711DB900D0A943 /* sead40_hw1Tests.swift */; };
+		6C22FD271B71202C00D0A943 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD261B71202C00D0A943 /* Tweet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		6C22FD131B711DB900D0A943 /* sead40_hw1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sead40_hw1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C22FD181B711DB900D0A943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C22FD191B711DB900D0A943 /* sead40_hw1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sead40_hw1Tests.swift; sourceTree = "<group>"; };
+		6C22FD261B71202C00D0A943 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				6C22FD031B711DB800D0A943 /* AppDelegate.swift */,
-				6C22FD051B711DB800D0A943 /* ViewController.swift */,
-				6C22FD071B711DB900D0A943 /* Main.storyboard */,
+				6C22FD231B711EAB00D0A943 /* Model */,
+				6C22FD241B711EB300D0A943 /* View */,
+				6C22FD251B711EB900D0A943 /* Controller */,
 				6C22FD0A1B711DB900D0A943 /* Images.xcassets */,
-				6C22FD0C1B711DB900D0A943 /* LaunchScreen.xib */,
 				6C22FD011B711DB800D0A943 /* Supporting Files */,
 			);
 			path = sead40_hw1;
@@ -110,6 +112,31 @@
 				6C22FD181B711DB900D0A943 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C22FD231B711EAB00D0A943 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C22FD261B71202C00D0A943 /* Tweet.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6C22FD241B711EB300D0A943 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C22FD071B711DB900D0A943 /* Main.storyboard */,
+				6C22FD0C1B711DB900D0A943 /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6C22FD251B711EB900D0A943 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6C22FD051B711DB800D0A943 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C22FD271B71202C00D0A943 /* Tweet.swift in Sources */,
 				6C22FD061B711DB800D0A943 /* ViewController.swift in Sources */,
 				6C22FD041B711DB800D0A943 /* AppDelegate.swift in Sources */,
 			);
