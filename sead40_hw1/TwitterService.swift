@@ -31,9 +31,12 @@ class TwitterService {
         case 200...299:
           let tweets = TweetJSONParser.tweetsFromJSONData(data)
           completionHandler(nil,tweets)
-        case 300...399:
-          println()
-
+        case 400...499:
+          completionHandler("this is our fault", nil)
+        case 500...599:
+          completionHandler("this is the servers fault", nil)
+        default:
+          completionHandler("error occurred", nil)
         }
       }
     }
