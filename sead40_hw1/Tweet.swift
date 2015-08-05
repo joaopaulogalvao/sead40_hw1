@@ -11,10 +11,8 @@ import Foundation
 struct Tweet {
   
   let text : String?
-  let author : String
   let username : String
   let id : String
   let profileImageURL : String
-
 }
 
