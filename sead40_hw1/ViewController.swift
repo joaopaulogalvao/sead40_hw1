@@ -18,19 +18,49 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    tableview.dataSource = self
     
-    if let filepath = NSBundle.mainBundle().pathForResource("tweet", ofType: "json") {
-      if let data = NSData(contentsOfFile: filepath) {
-        if let tweets = TweetJSONParser.tweetsFromJSONData(data) {
-          self.tweets = tweets
-          
-          println(tweets)
-        }
+    /* Access the LoginService and alert for errors after the view is loaded
+    
+       There are two parameters being used in the closure: errorDescription(String) and account(ACAccount) - this call will handle errors and account access*/
+    
+    LoginService.loginForTwitter { (errorDescription, account) -> (Void) in
+      
+      // Handle errors
+      if let errorDescription = errorDescription {
+        // alert the user
+      } else {
+        println("No errors")
+      }
+      
+      // Handle access - If theres is an account fetch an account and handle it asynchronously by using the function tweetsfromHomeTimeline
+      if let account = account {
         
+        // Access the TwitterService - Handler: After access an account check for error and tweets
+        TwitterService.tweetsFromHomeTimeline(account, completionHandler: { (errorDescription, tweets) -> (Void) in
+          //After checking - If I had left just a println(tweets) without setting a switch case in my TwitterService it would have returned a code 200. As anything else other than an error would return any code. I hadn't done the else and the switch case inside it by that moment.
+            println(tweets)
+        })
       }
     }
-  
+    
+    tableview.dataSource = self
+    
+    
+    
+    
+    
+    
+    
+//    if let filepath = NSBundle.mainBundle().pathForResource("tweet", ofType: "json") {
+//      if let data = NSData(contentsOfFile: filepath) {
+//        if let tweets = TweetJSONParser.tweetsFromJSONData(data) {
+//          self.tweets = tweets
+//          
+//          //println(tweets)
+//          //println(LoginService.loginForTwitter(<#completionHandler: (String?, ACAccount?) -> Void##(String?, ACAccount?) -> Void#>))
+//        }
+//      }
+//    }
   }
 
   override func didReceiveMemoryWarning() {
