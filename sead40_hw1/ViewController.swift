@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
+    tableview.estimatedRowHeight = 100
+    tableview.rowHeight = UITableViewAutomaticDimension
+    
     
     /* Access the LoginService and alert for errors after the view is loaded
     
@@ -53,8 +56,15 @@ class ViewController: UIViewController {
       }
     }
     
+    self.view.constraints()
+    
     tableview.dataSource = self
     tableview.reloadData()
+    
+
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateLabels", name: UIContentSizeCategoryDidChangeNotification, object: nil)
+    
+
     
     
     
@@ -97,6 +107,10 @@ extension ViewController : UITableViewDataSource {
     
     //Place username in its label
     cell.usernameLabel.text = tweet.username
+    
+    cell.tweetLabel.text = tweet.text
+    
+    
     
     return cell
   }
