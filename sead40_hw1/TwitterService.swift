@@ -15,7 +15,7 @@ class TwitterService {
   // Function that access
   class func tweetsFromHomeTimeline(account : ACAccount, completionHandler : (String?, [Tweet]?) -> (Void)) {
     
-    //Create a request object
+    //Create a request object to Twitter's server / JSON File in the server is the same as local one used on previous example
     let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")!, parameters: nil)
     
     //User the account information to authenticate

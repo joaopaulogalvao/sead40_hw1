@@ -90,9 +90,13 @@ extension ViewController : UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
+    
+    // Fetch an array of Tweets to an index
     let tweet = tweets[indexPath.row]
-    cell.textLabel?.text = tweet.text
+    
+    //Place username in its label
+    cell.usernameLabel.text = tweet.username
     
     return cell
   }
