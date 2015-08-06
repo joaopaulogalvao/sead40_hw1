@@ -131,9 +131,7 @@ extension ViewController : UITableViewDataSource {
           println("Row \(indexPath.row) selected")
           
           
-          
-          
-          //detailViewController.selMake = selectedTweet
+          detailViewController.selectedTweet = selectedTweet
           
         }
         
