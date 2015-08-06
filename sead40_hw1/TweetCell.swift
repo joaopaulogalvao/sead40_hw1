@@ -10,7 +10,7 @@ import UIKit
 
 class TweetCell: UITableViewCell {
 
+  
   @IBOutlet weak var usernameLabel: UILabel!
-    
 
 }

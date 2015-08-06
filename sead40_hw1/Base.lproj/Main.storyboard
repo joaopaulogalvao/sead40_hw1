@@ -21,26 +21,44 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" id="V2O-fm-Ejh" customClass="TweetCell" customModule="sead40_hw1" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="100" id="V2O-fm-Ejh" customClass="TweetCell" customModule="sead40_hw1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V2O-fm-Ejh" id="nUG-rq-mgl">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ur-ud-ZjK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1Y-IN-lzX">
                                                     <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEW-zz-9yn">
+                                                    <rect key="frame" x="8" y="29" width="584" height="62"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="2Ur-ud-ZjK" firstAttribute="top" secondItem="nUG-rq-mgl" secondAttribute="topMargin" id="c2E-IQ-72M"/>
-                                                <constraint firstItem="2Ur-ud-ZjK" firstAttribute="leading" secondItem="nUG-rq-mgl" secondAttribute="leadingMargin" id="ugw-Gs-ZF2"/>
+                                                <constraint firstItem="fEW-zz-9yn" firstAttribute="leading" secondItem="Y1Y-IN-lzX" secondAttribute="leading" id="D8J-3o-6bx"/>
+                                                <constraint firstItem="fEW-zz-9yn" firstAttribute="top" secondItem="Y1Y-IN-lzX" secondAttribute="bottom" id="UZh-Ie-1rg"/>
+                                                <constraint firstItem="fEW-zz-9yn" firstAttribute="trailing" secondItem="nUG-rq-mgl" secondAttribute="trailingMargin" id="aPH-nz-cD4"/>
+                                                <constraint firstItem="Y1Y-IN-lzX" firstAttribute="leading" secondItem="nUG-rq-mgl" secondAttribute="leadingMargin" id="fCw-YG-VnB"/>
+                                                <constraint firstItem="Y1Y-IN-lzX" firstAttribute="top" secondItem="nUG-rq-mgl" secondAttribute="topMargin" id="jJf-Fl-XnH"/>
+                                                <constraint firstItem="fEW-zz-9yn" firstAttribute="leading" secondItem="nUG-rq-mgl" secondAttribute="leadingMargin" id="k4f-uO-Cot"/>
+                                                <constraint firstItem="fEW-zz-9yn" firstAttribute="top" secondItem="Y1Y-IN-lzX" secondAttribute="bottom" constant="8" id="nle-Eb-BHj"/>
+                                                <constraint firstItem="fEW-zz-9yn" firstAttribute="bottom" secondItem="nUG-rq-mgl" secondAttribute="bottomMargin" id="w8M-BF-Qft"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="k4f-uO-Cot"/>
+                                                    <exclude reference="nle-Eb-BHj"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="usernameLabel" destination="2Ur-ud-ZjK" id="sOR-nn-kwW"/>
+                                            <outlet property="usernameLabel" destination="Y1Y-IN-lzX" id="N2h-BY-rIa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
