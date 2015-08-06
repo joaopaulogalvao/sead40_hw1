@@ -90,7 +90,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="tex-vQ-LQo">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="tex-vQ-LQo" customClass="DetailCell" customModule="sead40_hw1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tex-vQ-LQo" id="e4X-Oo-Bax">
@@ -146,6 +146,13 @@
                                                 <constraint firstItem="dIc-ZZ-l0T" firstAttribute="leading" secondItem="z49-iD-xfj" secondAttribute="trailing" constant="8" id="vmg-dZ-9a7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="retweetedByLabel" destination="wiT-DZ-FEW" id="4qf-yG-g8B"/>
+                                            <outlet property="textLabel" destination="d5K-RN-C1y" id="bZb-Xd-DSM"/>
+                                            <outlet property="tweetTextLabel" destination="d5K-RN-C1y" id="3i7-st-kB6"/>
+                                            <outlet property="userAddress" destination="dIc-ZZ-l0T" id="zgu-40-am8"/>
+                                            <outlet property="userLabel" destination="X4l-jq-tB4" id="lZ3-sZ-2C4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
