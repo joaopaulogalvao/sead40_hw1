@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var tableview: UITableView!
   
@@ -59,6 +60,7 @@ class ViewController: UIViewController {
     self.view.constraints()
     
     tableview.dataSource = self
+    tableview.delegate = self
     tableview.reloadData()
     
 
@@ -114,7 +116,38 @@ extension ViewController : UITableViewDataSource {
     
     return cell
   }
+  
+  //MARK: Navigation
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+    if segue.identifier == "ShowDetailTweet" {
+      if let detailViewController = segue.destinationViewController as? DetailViewController {
+        
+        let myIndexPath = self.tableview.indexPathForSelectedRow()
+        
+        if let indexPath = self.tableview.indexPathForSelectedRow() {
+          
+          let selectedRow = indexPath.row
+          let selectedTweet = self.tweets[selectedRow]
+          println("Row \(indexPath.row) selected")
+          
+          
+          
+          
+          //detailViewController.selMake = selectedTweet
+          
+        }
+        
+        println("Detail Clicked")
+        
+      }
+    }
+  }
 }
+
+
+
+
+
 
 
 

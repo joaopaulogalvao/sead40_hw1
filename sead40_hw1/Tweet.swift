@@ -14,5 +14,8 @@ struct Tweet {
   let username : String
   let id : String
   let profileImageURL : String
+  var retweet : [String : AnyObject]?
+  
 }
+
 

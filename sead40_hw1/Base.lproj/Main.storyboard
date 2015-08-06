@@ -52,6 +52,7 @@
                                         <connections>
                                             <outlet property="tweetLabel" destination="fEW-zz-9yn" id="7j4-ra-ues"/>
                                             <outlet property="usernameLabel" destination="Y1Y-IN-lzX" id="N2h-BY-rIa"/>
+                                            <segue destination="ux0-qi-MwS" kind="show" identifier="ShowDetailTweet" id="cz2-xU-Tug"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -68,16 +69,15 @@
                     <navigationItem key="navigationItem" id="b9U-c8-KFS"/>
                     <connections>
                         <outlet property="tableview" destination="7wu-JH-Yng" id="tjq-7v-xXO"/>
-                        <segue destination="ux0-qi-MwS" kind="show" id="NVP-tf-VPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="LGu-tW-MQV">
             <objects>
-                <viewController id="ux0-qi-MwS" sceneMemberID="viewController">
+                <viewController id="ux0-qi-MwS" customClass="DetailViewController" customModule="sead40_hw1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iNj-jq-Zbx"/>
                         <viewControllerLayoutGuide type="bottom" id="AC6-kN-COi"/>
@@ -85,7 +85,19 @@
                     <view key="view" contentMode="scaleToFill" id="UON-7b-Wr1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KEB-kO-tVO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KEB-kO-tVO" firstAttribute="top" secondItem="UON-7b-Wr1" secondAttribute="topMargin" id="4zN-SD-ZZ1"/>
+                            <constraint firstItem="AC6-kN-COi" firstAttribute="top" secondItem="KEB-kO-tVO" secondAttribute="bottom" id="Hn8-e9-2p4"/>
+                            <constraint firstItem="KEB-kO-tVO" firstAttribute="leading" secondItem="UON-7b-Wr1" secondAttribute="leadingMargin" constant="-16" id="Mbx-bM-DqT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KEB-kO-tVO" secondAttribute="trailing" constant="-16" id="h8E-EA-osI"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76c-u8-kYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
