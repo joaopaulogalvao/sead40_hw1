@@ -16,6 +16,8 @@
 		6C22FD271B71202C00D0A943 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD261B71202C00D0A943 /* Tweet.swift */; };
 		6C22FD291B71269B00D0A943 /* TweetJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD281B71269B00D0A943 /* TweetJSONParser.swift */; };
 		6C22FD2B1B712B0F00D0A943 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C22FD2A1B712B0F00D0A943 /* tweet.json */; };
+		6C22FD2D1B725E4300D0A943 /* TwitterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD2C1B725E4300D0A943 /* TwitterService.swift */; };
+		6C22FD2F1B726B3300D0A943 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD2E1B726B3300D0A943 /* LoginService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		6C22FD261B71202C00D0A943 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		6C22FD281B71269B00D0A943 /* TweetJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetJSONParser.swift; sourceTree = "<group>"; };
 		6C22FD2A1B712B0F00D0A943 /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
+		6C22FD2C1B725E4300D0A943 /* TwitterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterService.swift; sourceTree = "<group>"; };
+		6C22FD2E1B726B3300D0A943 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				6C22FD051B711DB800D0A943 /* ViewController.swift */,
+				6C22FD2C1B725E4300D0A943 /* TwitterService.swift */,
 				6C22FD281B71269B00D0A943 /* TweetJSONParser.swift */,
+				6C22FD2E1B726B3300D0A943 /* LoginService.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,7 +253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C22FD291B71269B00D0A943 /* TweetJSONParser.swift in Sources */,
+				6C22FD2F1B726B3300D0A943 /* LoginService.swift in Sources */,
 				6C22FD271B71202C00D0A943 /* Tweet.swift in Sources */,
+				6C22FD2D1B725E4300D0A943 /* TwitterService.swift in Sources */,
 				6C22FD061B711DB800D0A943 /* ViewController.swift in Sources */,
 				6C22FD041B711DB800D0A943 /* AppDelegate.swift in Sources */,
 			);
