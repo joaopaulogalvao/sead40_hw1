@@ -21,6 +21,7 @@
 		6C22FD331B730AC300D0A943 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD321B730AC300D0A943 /* TweetCell.swift */; };
 		6C22FD371B73BA3A00D0A943 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD361B73BA3A00D0A943 /* DetailViewController.swift */; };
 		6C22FD391B73E36100D0A943 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD381B73E36100D0A943 /* DetailCell.swift */; };
+		6C39BCF01B74951D00F07E7B /* ImageSizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C39BCEF1B74951D00F07E7B /* ImageSizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		6C22FD321B730AC300D0A943 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		6C22FD361B73BA3A00D0A943 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6C22FD381B73E36100D0A943 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		6C39BCEF1B74951D00F07E7B /* ImageSizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				6C22FD281B71269B00D0A943 /* TweetJSONParser.swift */,
 				6C22FD2E1B726B3300D0A943 /* LoginService.swift */,
 				6C22FD361B73BA3A00D0A943 /* DetailViewController.swift */,
+				6C39BCEF1B74951D00F07E7B /* ImageSizer.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				6C22FD291B71269B00D0A943 /* TweetJSONParser.swift in Sources */,
 				6C22FD331B730AC300D0A943 /* TweetCell.swift in Sources */,
 				6C22FD391B73E36100D0A943 /* DetailCell.swift in Sources */,
+				6C39BCF01B74951D00F07E7B /* ImageSizer.swift in Sources */,
 				6C22FD2F1B726B3300D0A943 /* LoginService.swift in Sources */,
 				6C22FD271B71202C00D0A943 /* Tweet.swift in Sources */,
 				6C22FD2D1B725E4300D0A943 /* TwitterService.swift in Sources */,
@@ -465,6 +469,7 @@
 				6C22FD1F1B711DB900D0A943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C22FD201B711DB900D0A943 /* Build configuration list for PBXNativeTarget "sead40_hw1Tests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +478,7 @@
 				6C22FD221B711DB900D0A943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
