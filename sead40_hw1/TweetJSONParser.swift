@@ -26,7 +26,7 @@ class TweetJSONParser {
         profileImageURL = userInfo["profile_image_url"] as? String {
           
           //If they exist, create a tweet object with retweet as nil, for the compiler, as the Struct contains it
-          var tweet =  Tweet(text: text, username: username, id: id, profileImageURL: profileImageURL, retweet: nil, quotedTweet: nil, originalUser: nil, retweetText: nil, retweetedFrom: nil, retweetedUserAddress: nil, isRetweet: false)
+          var tweet =  Tweet(text: text, username: username, id: id, profileImageURL: profileImageURL, retweet: nil, quotedTweet: nil, originalUser: nil, retweetText: nil, retweetedFrom: nil, retweetedUserAddress: nil, quoteText: nil, quotedFrom: nil, quotedUserAddress: nil, isRetweet: false, isQuote: false)
           
 
           
@@ -61,13 +61,33 @@ class TweetJSONParser {
             //Check if it is a quote
           } else if let quoteTweetDict = tweetObject["quoted_status"] as? [String : AnyObject] {
             println("It is a Quote")
-            println(quoteTweetDict)
+            //println(quoteTweetDict)
             
             //Check quoteUserInfo
             if let quotedUserInfo = quoteTweetDict["user"] as? [String : AnyObject], quotedUser = quotedUserInfo["name"] as? String, quotedUserAddress = quotedUserInfo["screen_name"] as? String {
               
+              tweet.quotedFrom = quotedUser
+              tweet.quotedUserAddress = quotedUserAddress
+              
+              println(quotedUser)
+              println(quotedUserAddress)
               //Change the quoteTweet parameter to the value which was found
               tweet.quotedTweet = quoteTweetDict
+              
+            }
+            
+            //If it is a retwet access its text key
+            if let quoteText = quoteTweetDict["text"] as? String{
+              
+              //Add a reference to the retweet text value
+              tweet.quoteText = text
+              
+              //Change the retweet parameter to the value of true
+              tweet.isQuote = true
+              
+              println("It is a Quote")
+              println(tweet.quoteText)
+              
               
             }
             

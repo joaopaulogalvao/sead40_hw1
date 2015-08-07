@@ -22,7 +22,12 @@ struct Tweet {
   var retweetedFrom : String?
   var retweetedUserAddress : String?
   
+  var quoteText: String?
+  var quotedFrom: String?
+  var quotedUserAddress : String?
+  
   var isRetweet : Bool
+  var isQuote : Bool
   
 }
 

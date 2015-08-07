@@ -70,6 +70,8 @@ extension DetailViewController : UITableViewDataSource {
       println(self.selectedTweet?.retweetText)
      
       
+    } else if (self.selectedTweet?.isQuote == true){
+      
     } else {
       detailCell.tweetTextLabel.text = selectedTweet?.text
     }
