@@ -123,6 +123,42 @@ extension DetailViewController : UITableViewDataSource {
       detailCell.tweetTextLabel.text = selectedTweet?.text
       detailCell.userLabel.text = selectedTweet?.username
       detailCell.userAddress.text = selectedTweet?.userAddress
+      
+      if let profileImage = self.selectedTweet?.profileImage {
+        
+        detailCell.retweetedImgView.image = profileImage
+        
+      } else {
+        //Only load when needed
+        retweetImageQueue.addOperationWithBlock({ () -> Void in
+          //Check if there is an URL, Data and image
+          if let imageURL = NSURL(string: self.selectedTweet!.profileImageURL),
+            data = NSData(contentsOfURL: imageURL),
+            image = UIImage(data: data){
+              
+              //Check for image size depending on resolution
+              var size : CGSize
+              switch UIScreen.mainScreen().scale {
+              case 2:
+                size = CGSize(width: 160, height: 160)
+              case 3:
+                size = CGSize(width: 240, height: 240)
+                println("Size 240")
+              default:
+                size = CGSize(width: 80, height: 80)
+                println("default")
+              }
+              
+              let resizedImage = ImageSizer.resizeImage(image, size: size)
+              
+              
+          }
+          
+          
+        })
+      }
+      
+      
     }
     
     
