@@ -56,7 +56,7 @@ extension DetailViewController : UITableViewDataSource {
     let detailCell = tableView.dequeueReusableCellWithIdentifier("DetailCell", forIndexPath: indexPath) as! DetailCell
     
     
-    
+    // If it is a retweet, show its infos
     if (self.selectedTweet?.isRetweet == true) {
       
       detailCell.retweetedByLabel.text = selectedTweet?.username
@@ -69,9 +69,12 @@ extension DetailViewController : UITableViewDataSource {
       
       println(self.selectedTweet?.retweetText)
      
-      
+    // If it is a quote, show its infos
     } else if (self.selectedTweet?.isQuote == true){
       
+      detailCell.tweetTextLabel.text = selectedTweet?.quoteText
+      
+    // If it is a normal tweet, show its infos
     } else {
       detailCell.tweetTextLabel.text = selectedTweet?.text
     }
