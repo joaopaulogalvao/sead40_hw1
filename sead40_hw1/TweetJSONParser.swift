@@ -32,13 +32,14 @@ class TweetJSONParser {
           
           //Check if it is a retweet and access this dictionary data to get the key
           if let retweetDict = tweetObject["retweeted_status"] as? [String : AnyObject] {
-            //println(retweetDict)
+            println(retweetDict)
             
             //Check retweetedUserInfo
-            if let retweetedUserInfo = retweetDict["user"] as? [String : AnyObject], retweetedUser = retweetedUserInfo["screen_name"] as? String {
+            if let retweetedUserInfo = retweetDict["user"] as? [String : AnyObject], retweetedUser = retweetedUserInfo["name"] as? String, retweetedUserAddress = retweetedUserInfo["screen_name"] as? String {
               
               tweet.retweetedFrom = retweetedUser
               println(retweetedUser)
+              println(retweetedUserAddress)
             }
             
             //If it is a retwet access its text key
