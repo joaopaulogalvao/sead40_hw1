@@ -26,7 +26,7 @@ class TweetJSONParser {
         profileImageURL = userInfo["profile_image_url"] as? String {
           
           //If they exist, create a tweet object with retweet as nil, for the compiler, as the Struct contains it
-          var tweet =  Tweet(text: text, username: username, id: id, profileImageURL: profileImageURL, retweet: nil, quotedTweet: nil, originalUser: nil, retweetText: nil, retweetedFrom: nil, retweetedUserAddress: nil, quoteText: nil, quotedFrom: nil, quotedUserAddress: nil, isRetweet: false, isQuote: false)
+          var tweet =  Tweet(text: text, username: username, id: id, profileImageURL: profileImageURL, profileImage: nil, retweet: nil, quotedTweet: nil, originalUser: nil, retweetText: nil, retweetedFrom: nil, retweetedUserAddress: nil, quoteText: nil, quotedFrom: nil, quotedUserAddress: nil, isRetweet: false, isQuote: false)
           
 
           

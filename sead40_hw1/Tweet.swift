@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 jalvestech. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Tweet {
   
@@ -14,6 +14,7 @@ struct Tweet {
   let username : String
   let id : String
   let profileImageURL : String
+  var profileImage : UIImage?
   var retweet : [String : AnyObject]?
   var quotedTweet : [String : AnyObject]?
   var originalUser : String?

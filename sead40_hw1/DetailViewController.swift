@@ -21,7 +21,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     self.detailTableView.dataSource = self
     
+    detailTableView.estimatedRowHeight = 100
+    detailTableView.rowHeight = UITableViewAutomaticDimension
     
+    
+    self.view.constraints()
     // Do any additional setup after loading the view.
   }
   

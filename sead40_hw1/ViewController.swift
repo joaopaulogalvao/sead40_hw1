@@ -14,6 +14,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
   @IBOutlet weak var tableview: UITableView!
   
   var tweets = [Tweet]()
+  lazy var imageQueue = NSOperationQueue()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -107,12 +108,45 @@ extension ViewController : UITableViewDataSource {
     // Fetch an array of Tweets to an index
     let tweet = tweets[indexPath.row]
     
+    //Fetch images
+    cell.profileImageView.image = nil
+    
     //Place username in its label
     cell.usernameLabel.text = tweet.username
     
     cell.tweetLabel.text = tweet.text
     
-    
+    //Check if there is an image
+    if let profileImage = tweet.profileImage {
+      
+      cell.profileImageView.image = profileImage
+      
+    } else {
+      //Only load when needed
+      imageQueue.addOperationWithBlock({ () -> Void in
+        //Check if there is an URL, Data and image
+        if let imageURL = NSURL(string: tweet.profileImageURL),
+          data = NSData(contentsOfURL: imageURL),
+          image = UIImage(data: data){
+            
+            //Check for image size depending on resolution
+            var size : CGSize
+            switch UIScreen.mainScreen().scale {
+            case 2:
+              size = CGSize(width: 160, height: 160)
+            case 3:
+              size = CGSize(width: 240, height: 240)
+            default:
+              size = CGSize(width: 80, height: 80)
+            }
+            
+            
+          
+        }
+        
+        
+      })
+    }
     
     return cell
   }
