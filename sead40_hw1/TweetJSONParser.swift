@@ -32,7 +32,7 @@ class TweetJSONParser {
           
           //Check if it is a retweet and access this dictionary data to get the key
           if let retweetDict = tweetObject["retweeted_status"] as? [String : AnyObject] {
-            println(retweetDict)
+            //println(retweetDict)
             
             //Check retweetedUserInfo
             if let retweetedUserInfo = retweetDict["user"] as? [String : AnyObject], retweetedUser = retweetedUserInfo["name"] as? String, retweetedUserAddress = retweetedUserInfo["screen_name"] as? String {
@@ -58,22 +58,23 @@ class TweetJSONParser {
             
               
             }
+            //Check if it is a quote
+          } else if let quoteTweetDict = tweetObject["quoted_status"] as? [String : AnyObject] {
+            println("It is a Quote")
+            println(quoteTweetDict)
             
-          }
-          
-          //Check if it is a quote
-          if let quoteTweetDict = tweetObject["quoted_status"] as? [String : AnyObject] {
-            
-            
-            
+            //Check quoteUserInfo
+            if let quotedUserInfo = quoteTweetDict["user"] as? [String : AnyObject], quotedUser = quotedUserInfo["name"] as? String, quotedUserAddress = quotedUserInfo["screen_name"] as? String {
+              
               //Change the quoteTweet parameter to the value which was found
               tweet.quotedTweet = quoteTweetDict
-              println("It is a Quote")
+              
+            }
+            
           }
           
             // Append a tweet
             tweets.append(tweet)
-            
         }
       }
       return tweets
