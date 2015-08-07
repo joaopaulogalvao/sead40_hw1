@@ -20,6 +20,8 @@ class DetailCell: UITableViewCell {
   
   @IBOutlet weak var tweetTextLabel: UILabel!
   
-  @IBOutlet weak var retweetedImgView: UIImageView!
+  @IBOutlet weak var retweetedBtnImg: UIButton!
+  
+  
   
 }

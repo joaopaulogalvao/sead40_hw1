@@ -20,6 +20,15 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    let nibName = UINib(nibName: "TweetCellTemplate", bundle:nil)
+//    if let detailCellView = NSBundle.mainBundle().loadNibNamed("TweetCellTemplate", owner: self, options: nil).first as? DetailCell {
+//      view.addSubview(detailCellView)
+//    }
+    
+    self.detailTableView.registerNib(nibName, forCellReuseIdentifier: "DetailCell")
+    
+    
+    
     self.detailTableView.dataSource = self
     self.detailTableView.delegate = self
     
@@ -57,14 +66,20 @@ extension DetailViewController : UITableViewDataSource {
     return 1
   }
   
+  
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
     let detailCell = tableView.dequeueReusableCellWithIdentifier("DetailCell", forIndexPath: indexPath) as! DetailCell
     
+      
+    
+    
     
     // If it is a retweet, show its infos
     if (self.selectedTweet?.isRetweet == true) {
-      detailCell.retweetedImgView.image = nil
+      
+      
+      detailCell.retweetedBtnImg.imageView?.image = nil
       
       detailCell.retweetedByLabel.text = selectedTweet?.username
       
@@ -79,7 +94,8 @@ extension DetailViewController : UITableViewDataSource {
       
       if let profileImage = self.selectedTweet?.profileImage {
         
-        detailCell.retweetedImgView.image = profileImage
+        detailCell.retweetedBtnImg.setBackgroundImage(profileImage, forState: UIControlState.Normal)
+        
         
       } else {
         //Only load when needed
@@ -124,7 +140,7 @@ extension DetailViewController : UITableViewDataSource {
       
       if let profileImage = self.selectedTweet?.profileImage {
         
-        detailCell.retweetedImgView.image = profileImage
+        detailCell.retweetedBtnImg.setBackgroundImage(profileImage, forState: UIControlState.Normal)
         
       } else {
         //Only load when needed
@@ -168,7 +184,7 @@ extension DetailViewController : UITableViewDataSource {
       
       if let profileImage = self.selectedTweet?.profileImage {
         
-        detailCell.retweetedImgView.image = profileImage
+        detailCell.retweetedBtnImg.setBackgroundImage(profileImage, forState: UIControlState.Normal)
         
       } else {
         //Only load when needed
@@ -207,5 +223,8 @@ extension DetailViewController : UITableViewDataSource {
     return detailCell
   }
   
+  func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    <#code#>
+  }
   
 }

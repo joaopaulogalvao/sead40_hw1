@@ -22,6 +22,7 @@
 		6C22FD371B73BA3A00D0A943 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD361B73BA3A00D0A943 /* DetailViewController.swift */; };
 		6C22FD391B73E36100D0A943 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD381B73E36100D0A943 /* DetailCell.swift */; };
 		6C39BCF01B74951D00F07E7B /* ImageSizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C39BCEF1B74951D00F07E7B /* ImageSizer.swift */; };
+		6CDD5A0D1B753DE5009081B9 /* TweetCellTemplate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD5A0C1B753DE5009081B9 /* TweetCellTemplate.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		6C22FD361B73BA3A00D0A943 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6C22FD381B73E36100D0A943 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		6C39BCEF1B74951D00F07E7B /* ImageSizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSizer.swift; sourceTree = "<group>"; };
+		6CDD5A0C1B753DE5009081B9 /* TweetCellTemplate.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCellTemplate.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				6C22FD2E1B726B3300D0A943 /* LoginService.swift */,
 				6C22FD361B73BA3A00D0A943 /* DetailViewController.swift */,
 				6C39BCEF1B74951D00F07E7B /* ImageSizer.swift */,
+				6CDD5A0C1B753DE5009081B9 /* TweetCellTemplate.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				6C22FD091B711DB900D0A943 /* Main.storyboard in Resources */,
 				6C22FD0E1B711DB900D0A943 /* LaunchScreen.xib in Resources */,
 				6C22FD0B1B711DB900D0A943 /* Images.xcassets in Resources */,
+				6CDD5A0D1B753DE5009081B9 /* TweetCellTemplate.xib in Resources */,
 				6C22FD2B1B712B0F00D0A943 /* tweet.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
