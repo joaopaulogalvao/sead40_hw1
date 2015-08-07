@@ -12,11 +12,14 @@ class DetailCell: UITableViewCell {
 
   
   
+  @IBOutlet weak var retweetedByText: UILabel!
   @IBOutlet weak var retweetedByLabel: UILabel!
   @IBOutlet weak var userLabel: UILabel!
   
   @IBOutlet weak var userAddress: UILabel!
   
   @IBOutlet weak var tweetTextLabel: UILabel!
+  
+  @IBOutlet weak var retweetedImgView: UIImageView!
   
 }

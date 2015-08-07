@@ -12,6 +12,7 @@ struct Tweet {
   
   let text : String?
   let username : String
+  let userAddress : String
   let id : String
   let profileImageURL : String
   var profileImage : UIImage?

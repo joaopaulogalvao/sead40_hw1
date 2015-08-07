@@ -125,6 +125,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z49-iD-xfj">
                                                     <rect key="frame" x="8" y="31" width="80" height="80"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="3S0-lu-crw"/>
                                                         <constraint firstAttribute="width" constant="80" id="udr-LK-S5B"/>
                                                     </constraints>
                                                 </imageView>
@@ -140,15 +141,15 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5K-RN-C1y">
-                                                    <rect key="frame" x="8" y="119" width="584" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="retweeted by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wX-Cv-HHI">
                                                     <rect key="frame" x="8" y="8" width="73" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5K-RN-C1y">
+                                                    <rect key="frame" x="96" y="83" width="496" height="68"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -157,6 +158,7 @@
                                                 <constraint firstItem="X4l-jq-tB4" firstAttribute="top" secondItem="wiT-DZ-FEW" secondAttribute="bottom" constant="8" id="04Z-mQ-pmQ"/>
                                                 <constraint firstItem="X4l-jq-tB4" firstAttribute="leading" secondItem="dIc-ZZ-l0T" secondAttribute="leading" id="33I-Ik-paW"/>
                                                 <constraint firstItem="z49-iD-xfj" firstAttribute="leading" secondItem="wiT-DZ-FEW" secondAttribute="leading" constant="-88" id="6BH-hd-NAd"/>
+                                                <constraint firstItem="d5K-RN-C1y" firstAttribute="top" secondItem="dIc-ZZ-l0T" secondAttribute="bottom" constant="8" id="8e0-3w-gcp"/>
                                                 <constraint firstItem="z49-iD-xfj" firstAttribute="leading" secondItem="e4X-Oo-Bax" secondAttribute="leadingMargin" id="9BU-Jk-kei"/>
                                                 <constraint firstItem="X4l-jq-tB4" firstAttribute="leading" secondItem="z49-iD-xfj" secondAttribute="trailing" constant="8" id="F0l-yj-knn"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="z49-iD-xfj" secondAttribute="bottom" constant="40" id="NSc-MY-qTT"/>
@@ -166,12 +168,16 @@
                                                 <constraint firstItem="z49-iD-xfj" firstAttribute="leading" secondItem="d5K-RN-C1y" secondAttribute="leading" id="XoH-uk-AO7"/>
                                                 <constraint firstItem="wiT-DZ-FEW" firstAttribute="leading" secondItem="e4X-Oo-Bax" secondAttribute="leadingMargin" constant="88" id="ZVn-Ah-9oG"/>
                                                 <constraint firstItem="z49-iD-xfj" firstAttribute="top" secondItem="wiT-DZ-FEW" secondAttribute="bottom" constant="8" id="aX2-zJ-rkn"/>
+                                                <constraint firstItem="X4l-jq-tB4" firstAttribute="leading" secondItem="wiT-DZ-FEW" secondAttribute="leading" id="bKE-rj-OFD"/>
                                                 <constraint firstItem="d5K-RN-C1y" firstAttribute="leading" secondItem="e4X-Oo-Bax" secondAttribute="leadingMargin" id="bSj-Jw-1Nu"/>
+                                                <constraint firstItem="X4l-jq-tB4" firstAttribute="leading" secondItem="d5K-RN-C1y" secondAttribute="leading" id="bv1-hw-X3a"/>
                                                 <constraint firstItem="6wX-Cv-HHI" firstAttribute="top" secondItem="e4X-Oo-Bax" secondAttribute="topMargin" id="c09-iB-k71"/>
+                                                <constraint firstItem="d5K-RN-C1y" firstAttribute="top" secondItem="dIc-ZZ-l0T" secondAttribute="bottom" constant="8" id="fJ5-IM-IBn"/>
                                                 <constraint firstItem="dIc-ZZ-l0T" firstAttribute="top" secondItem="X4l-jq-tB4" secondAttribute="bottom" constant="8" id="giV-PM-VHS"/>
                                                 <constraint firstItem="z49-iD-xfj" firstAttribute="leading" secondItem="d5K-RN-C1y" secondAttribute="leading" id="mOv-QQ-HBO"/>
                                                 <constraint firstItem="X4l-jq-tB4" firstAttribute="leading" secondItem="dIc-ZZ-l0T" secondAttribute="leading" id="oPt-Wb-PhD"/>
                                                 <constraint firstItem="d5K-RN-C1y" firstAttribute="bottom" secondItem="e4X-Oo-Bax" secondAttribute="bottomMargin" id="qgI-FA-U5I"/>
+                                                <constraint firstItem="X4l-jq-tB4" firstAttribute="leading" secondItem="dIc-ZZ-l0T" secondAttribute="leading" id="rzC-iL-bwx"/>
                                                 <constraint firstItem="X4l-jq-tB4" firstAttribute="leading" secondItem="wiT-DZ-FEW" secondAttribute="leading" id="tEb-sD-QAG"/>
                                                 <constraint firstItem="d5K-RN-C1y" firstAttribute="trailing" secondItem="e4X-Oo-Bax" secondAttribute="trailingMargin" id="uaa-F0-kj8"/>
                                                 <constraint firstItem="dIc-ZZ-l0T" firstAttribute="leading" secondItem="z49-iD-xfj" secondAttribute="trailing" constant="8" id="vmg-dZ-9a7"/>
@@ -180,12 +186,19 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="6BH-hd-NAd"/>
+                                                    <exclude reference="XoH-uk-AO7"/>
+                                                    <exclude reference="mOv-QQ-HBO"/>
                                                     <exclude reference="ZVn-Ah-9oG"/>
+                                                    <exclude reference="URD-gW-4do"/>
+                                                    <exclude reference="bSj-Jw-1Nu"/>
+                                                    <exclude reference="fJ5-IM-IBn"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="retweetedByLabel" destination="wiT-DZ-FEW" id="4qf-yG-g8B"/>
+                                            <outlet property="retweetedByText" destination="6wX-Cv-HHI" id="cnC-Bf-4hB"/>
+                                            <outlet property="retweetedImgView" destination="z49-iD-xfj" id="wVd-s4-UOf"/>
                                             <outlet property="textLabel" destination="d5K-RN-C1y" id="bZb-Xd-DSM"/>
                                             <outlet property="tweetTextLabel" destination="d5K-RN-C1y" id="3i7-st-kB6"/>
                                             <outlet property="userAddress" destination="dIc-ZZ-l0T" id="zgu-40-am8"/>
