@@ -21,8 +21,12 @@ class TwitterService {
   // Function that access
   class func tweetsFromHomeTimeline(completionHandler : (String?, [Tweet]?) -> (Void)) {
     
+    var increaseCount : [String : AnyObject]
+    increaseCount = ["count" : "50"]
+    
+    
     //Create a request object to Twitter's server / JSON File in the server is the same as local one used on previous example
-    let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")!, parameters: nil)
+    let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")!, parameters: increaseCount)
     
     //User the account information to authenticate
     request.account = self.sharedService.account

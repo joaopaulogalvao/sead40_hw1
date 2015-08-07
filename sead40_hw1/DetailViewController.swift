@@ -115,6 +115,48 @@ extension DetailViewController : UITableViewDataSource {
     } else if (self.selectedTweet?.isQuote == true){
       
       detailCell.tweetTextLabel.text = selectedTweet?.quoteText
+      detailCell.userAddress.text = selectedTweet?.quotedUserAddress
+      detailCell.retweetedByText.text = "quoted by"
+      detailCell.retweetedByLabel.text = selectedTweet?.username
+      
+      detailCell.userLabel.text = selectedTweet?.quotedFrom
+      detailCell.userAddress.text = selectedTweet?.quotedUserAddress
+      
+      if let profileImage = self.selectedTweet?.profileImage {
+        
+        detailCell.retweetedImgView.image = profileImage
+        
+      } else {
+        //Only load when needed
+        retweetImageQueue.addOperationWithBlock({ () -> Void in
+          //Check if there is an URL, Data and image
+          if let imageURL = NSURL(string: self.selectedTweet!.profileImageURL),
+            data = NSData(contentsOfURL: imageURL),
+            image = UIImage(data: data){
+              
+              //Check for image size depending on resolution
+              var size : CGSize
+              switch UIScreen.mainScreen().scale {
+              case 2:
+                size = CGSize(width: 160, height: 160)
+              case 3:
+                size = CGSize(width: 240, height: 240)
+                println("Size 240")
+              default:
+                size = CGSize(width: 80, height: 80)
+                println("default")
+              }
+              
+              let resizedImage = ImageSizer.resizeImage(image, size: size)
+              
+              
+          }
+          
+          
+        })
+      }
+      
+      
       
     // If it is a normal tweet, show its infos
     } else {
