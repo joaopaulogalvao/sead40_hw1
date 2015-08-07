@@ -97,7 +97,7 @@
         <!--Detail View Controller-->
         <scene sceneID="LGu-tW-MQV">
             <objects>
-                <viewController id="ux0-qi-MwS" customClass="DetailViewController" customModule="sead40_hw1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ux0-qi-MwS" customClass="DetailViewController" customModule="sead40_hw1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iNj-jq-Zbx"/>
                         <viewControllerLayoutGuide type="bottom" id="AC6-kN-COi"/>
@@ -131,7 +131,7 @@
         <!--View Controller-->
         <scene sceneID="5R5-qf-O58">
             <objects>
-                <viewController id="Eec-tg-KMh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Eec-tg-KMh" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OxB-rl-RcJ"/>
                         <viewControllerLayoutGuide type="bottom" id="2Bg-8C-9c3"/>

@@ -47,7 +47,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   
   
   
-  /*
+  
   // MARK: - Navigation
   
   // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -55,11 +55,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   // Get the new view controller using segue.destinationViewController.
   // Pass the selected object to the new view controller.
   }
-  */
   
 }
 
+  // MARK: - UITableViewDelegate
 
+  // MARK: - UITableViewDataSource
 extension DetailViewController : UITableViewDataSource {
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -209,13 +210,10 @@ extension DetailViewController : UITableViewDataSource {
               
               let resizedImage = ImageSizer.resizeImage(image, size: size)
               
-              
           }
-          
           
         })
       }
-      
       
     }
     
@@ -223,8 +221,41 @@ extension DetailViewController : UITableViewDataSource {
     return detailCell
   }
   
-  func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-    <#code#>
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+    self.performSegueWithIdentifier("moveFromDetailVCtoNextVC", sender: nil)
   }
+
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -22,6 +22,7 @@ class DetailCell: UITableViewCell {
   
   @IBOutlet weak var retweetedBtnImg: UIButton!
   
+
   
   
 }

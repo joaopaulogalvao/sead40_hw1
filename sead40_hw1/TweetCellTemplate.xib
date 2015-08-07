@@ -60,6 +60,9 @@
                                 <exclude reference="gU4-vp-bjG"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <action selector="sendToProfile:" destination="Bkc-eq-GzE" eventType="touchUpInside" id="nIR-aV-GdF"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
