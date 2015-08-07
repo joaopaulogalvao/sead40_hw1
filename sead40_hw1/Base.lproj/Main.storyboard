@@ -37,6 +37,7 @@
                                                     <rect key="frame" x="8" y="8" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="J9D-lz-453"/>
+                                                        <constraint firstAttribute="height" constant="80" id="NGJ-3V-OL0"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1Y-IN-lzX">
@@ -61,6 +62,7 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="AcC-db-C6n"/>
                                                     <exclude reference="fCw-YG-VnB"/>
                                                     <exclude reference="D8J-3o-6bx"/>
                                                 </mask>

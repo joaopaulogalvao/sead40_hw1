@@ -91,6 +91,18 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  
+  deinit {
+    
+    NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
+    
+  }
+  
+  func updateLabels() {
+    
+    self.tableview.reloadData()
+    
+  }
 
 
 }
@@ -105,14 +117,18 @@ extension ViewController : UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
     
+    cell.tag++
+    let tag = cell.tag
+    
     // Fetch an array of Tweets to an index
-    let tweet = tweets[indexPath.row]
+    var tweet = tweets[indexPath.row]
     
     //Fetch images
     cell.profileImageView.image = nil
     
     //Place username in its label
     cell.usernameLabel.text = tweet.username
+    cell.usernameLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
     
     cell.tweetLabel.text = tweet.text
     
@@ -136,11 +152,22 @@ extension ViewController : UITableViewDataSource {
               size = CGSize(width: 160, height: 160)
             case 3:
               size = CGSize(width: 240, height: 240)
+              println("Size 240")
             default:
               size = CGSize(width: 80, height: 80)
+              println("default")
             }
             
+            let resizedImage = ImageSizer.resizeImage(image, size: size)
             
+            // Send operation back to the main Queue
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+              tweet.profileImage = resizedImage
+              self.tweets[indexPath.row] = tweet
+              if cell.tag == tag {
+                cell.profileImageView.image = resizedImage
+              }
+            })
           
         }
         
