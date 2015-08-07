@@ -40,8 +40,11 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
       // Handle access - If theres is an account fetch an account and handle it asynchronously by using the function tweetsfromHomeTimeline
       if let account = account {
         
+        //Get the account reference from the twitter service
+        TwitterService.sharedService.account = account
+        
         // Access the TwitterService - Handler: After access an account check for error and tweets
-        TwitterService.tweetsFromHomeTimeline(account, completionHandler: { (errorDescription, tweets) -> (Void) in
+        TwitterService.tweetsFromHomeTimeline({ (errorDescription, tweets) -> (Void) in
           //After checking - If I had left just a println(tweets) without setting a switch case in my TwitterService it would have returned a code 200. As anything else other than an error would return any code. I hadn't done the else and the switch case inside it by that moment.
             //println(tweets)
           
@@ -68,13 +71,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateLabels", name: UIContentSizeCategoryDidChangeNotification, object: nil)
     
 
-    
-    
-    
-    
-    
-    
-    
 //    if let filepath = NSBundle.mainBundle().pathForResource("tweet", ofType: "json") {
 //      if let data = NSData(contentsOfFile: filepath) {
 //        if let tweets = TweetJSONParser.tweetsFromJSONData(data) {
