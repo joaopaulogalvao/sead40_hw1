@@ -19,12 +19,10 @@ struct Tweet {
   var originalUser : String?
   
   var retweetText : String?
-//  var retweetedFrom : String
+  var retweetedFrom : String?
   
   var isRetweet : Bool
   
 }
-
-
 
 
