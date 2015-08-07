@@ -26,19 +26,37 @@ class TweetJSONParser {
         profileImageURL = userInfo["profile_image_url"] as? String {
           
           //If they exist, create a tweet object with retweet as nil, for the compiler, as the Struct contains it
-          var tweet = Tweet(text: text, username: username, id: id, profileImageURL: profileImageURL, retweet: nil, quotedTweet: nil )
+         var tweet =  Tweet(text: text, username: username, id: id, profileImageURL: profileImageURL, retweet: nil, quotedTweet: nil, originalUser: nil, retweetText: nil, isRetweet: false)
           
-          //Check if it is a retweet
+          //Check if it is a retweet and access this dictionary data to get the key
           if let retweetDict = tweetObject["retweeted_status"] as? [String : AnyObject] {
+            //println(retweetDict)
             
-              //Change the retweet parameter to the value which was found
-              tweet.retweet = retweetDict
-              println("It is a retweet")
-              //println(tweetObject["retweeted_status"])
+            if let retweetedFrom = retweetDict["name"] as? [String : AnyObject], originalUserText = retweetedFrom["screen_name"] as? String{
+              println(retweetedFrom)
             }
+            
+            //If it is a retwet access its text key
+            if let text = retweetDict["text"] as? String{
+              
+              //Add a reference to the retweet text value
+              tweet.retweetText = text
+              
+              //Change the retweet parameter to the value of true
+              tweet.isRetweet = true
+              //              tweet.retweet = retweetDict
+              println("It is a retweet")
+              println(tweet.retweetText)
+              
+              
+            }
+            
+          }
           
           //Check if it is a quote
           if let quoteTweetDict = tweetObject["quoted_status"] as? [String : AnyObject] {
+            
+            
             
               //Change the quoteTweet parameter to the value which was found
               tweet.quotedTweet = quoteTweetDict

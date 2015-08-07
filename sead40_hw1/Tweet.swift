@@ -16,7 +16,15 @@ struct Tweet {
   let profileImageURL : String
   var retweet : [String : AnyObject]?
   var quotedTweet : [String : AnyObject]?
+  var originalUser : String?
+  
+  var retweetText : String?
+//  var retweetedFrom : String
+  
+  var isRetweet : Bool
   
 }
+
+
 
 

@@ -165,6 +165,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="KEB-kO-tVO" secondAttribute="trailing" constant="-16" id="h8E-EA-osI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailTableView" destination="KEB-kO-tVO" id="7bx-Ti-ek1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76c-u8-kYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
