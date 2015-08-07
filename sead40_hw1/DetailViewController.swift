@@ -65,6 +65,8 @@ extension DetailViewController : UITableViewDataSource {
       
       detailCell.userLabel.text = selectedTweet?.retweetedFrom
       
+      detailCell.userAddress.text = selectedTweet?.retweetedUserAddress
+      
       println(self.selectedTweet?.retweetText)
      
       

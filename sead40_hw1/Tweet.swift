@@ -20,6 +20,7 @@ struct Tweet {
   
   var retweetText : String?
   var retweetedFrom : String?
+  var retweetedUserAddress : String?
   
   var isRetweet : Bool
   
