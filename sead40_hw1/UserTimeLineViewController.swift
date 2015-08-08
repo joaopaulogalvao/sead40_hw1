@@ -11,6 +11,7 @@ import UIKit
 class UserTimeLineViewController: UIViewController {
 
   var tweets = [Tweet]()
+  var userSelected : Tweet!
   var screen_name : String?
   
   @IBOutlet weak var userTimeLineView: UIView!
@@ -25,9 +26,9 @@ class UserTimeLineViewController: UIViewController {
       
         // Do any additional setup after loading the view
       // Access the TwitterService - Handler: After access an account check for error and tweets
-      TwitterService.tweetsFromUserTimeLine(tweets, completionHandler: { (errorDescription, tweets) -> (Void) in
+      TwitterService.tweetsFromUserTimeLine(userSelected!, completionHandler: { (errorDescription, tweets) -> (Void) in
         //After checking - If I had left just a println(tweets) without setting a switch case in my TwitterService it would have returned a code 200. As anything else other than an error would return any code. I hadn't done the else and the switch case inside it by that moment.
-        println(tweets)
+        println(self.userSelected)
         
         //Handle existing tweets
         if let tweets = tweets {

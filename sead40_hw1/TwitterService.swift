@@ -53,7 +53,7 @@ class TwitterService {
   }
   
   // Function that access tweets from user timeline
-  class func tweetsFromUserTimeLine(screen_name: String, completionHandler : (String?, [Tweet]?) -> (Void)) {
+  class func tweetsFromUserTimeLine(screen_name: Tweet, completionHandler : (String?, [Tweet]?) -> (Void)) {
     
     var userTimeLineCount : [String : AnyObject]
     userTimeLineCount = ["count" : "50"]

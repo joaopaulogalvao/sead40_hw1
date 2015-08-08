@@ -58,6 +58,29 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
   // Get the new view controller using segue.destinationViewController.
   // Pass the selected object to the new view controller.
+    if segue.identifier == "moveFromDetailVCtoNextVC" {
+      
+      if let userTimeLineViewController = segue.destinationViewController as? UserTimeLineViewController {
+        
+        //grab the selected indexPath from the TableView
+        let mySelectedIndexPath = self.detailTableView.indexPathForSelectedRow()
+        
+        if let selectedIndexPath = self.detailTableView.indexPathForSelectedRow() {
+          
+          let selectedRow = selectedIndexPath.row
+          
+          //grab the selected person using the indexPath as the index in the players array
+          let screeName = selectedTweet
+          
+          //Set destinationViewController player propery to reference the selected player
+          userTimeLineViewController.userSelected = selectedTweet
+          
+        }
+        
+      }
+      
+    }
+    
   }
   
 }
@@ -76,9 +99,7 @@ extension DetailViewController : UITableViewDataSource {
     
     let detailCell = tableView.dequeueReusableCellWithIdentifier("DetailCell", forIndexPath: indexPath) as! DetailCell
     
-      
-    
-    
+
     
     // If it is a retweet, show its infos
     if (self.selectedTweet?.isRetweet == true) {
@@ -216,12 +237,12 @@ extension DetailViewController : UITableViewDataSource {
     return detailCell
   }
   
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
-    self.performSegueWithIdentifier("moveFromDetailVCtoNextVC", sender: nil)
-    
-    
-  }
+//  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//
+//    self.performSegueWithIdentifier("moveFromDetailVCtoNextVC", sender: nil)
+//    
+//    
+//  }
 
   
 }
