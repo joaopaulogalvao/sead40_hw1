@@ -23,6 +23,7 @@
 		6C22FD391B73E36100D0A943 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C22FD381B73E36100D0A943 /* DetailCell.swift */; };
 		6C39BCF01B74951D00F07E7B /* ImageSizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C39BCEF1B74951D00F07E7B /* ImageSizer.swift */; };
 		6CDD5A0D1B753DE5009081B9 /* TweetCellTemplate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD5A0C1B753DE5009081B9 /* TweetCellTemplate.xib */; };
+		6CDD5A111B7571C2009081B9 /* UserTimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD5A101B7571C2009081B9 /* UserTimeLineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		6C22FD381B73E36100D0A943 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		6C39BCEF1B74951D00F07E7B /* ImageSizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSizer.swift; sourceTree = "<group>"; };
 		6CDD5A0C1B753DE5009081B9 /* TweetCellTemplate.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCellTemplate.xib; sourceTree = "<group>"; };
+		6CDD5A101B7571C2009081B9 /* UserTimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTimeLineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				6C22FD071B711DB900D0A943 /* Main.storyboard */,
+				6CDD5A0C1B753DE5009081B9 /* TweetCellTemplate.xib */,
 				6C22FD0C1B711DB900D0A943 /* LaunchScreen.xib */,
 			);
 			name = View;
@@ -161,7 +164,7 @@
 				6C22FD2E1B726B3300D0A943 /* LoginService.swift */,
 				6C22FD361B73BA3A00D0A943 /* DetailViewController.swift */,
 				6C39BCEF1B74951D00F07E7B /* ImageSizer.swift */,
-				6CDD5A0C1B753DE5009081B9 /* TweetCellTemplate.xib */,
+				6CDD5A101B7571C2009081B9 /* UserTimeLineViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				6C22FD271B71202C00D0A943 /* Tweet.swift in Sources */,
 				6C22FD2D1B725E4300D0A943 /* TwitterService.swift in Sources */,
 				6C22FD061B711DB800D0A943 /* ViewController.swift in Sources */,
+				6CDD5A111B7571C2009081B9 /* UserTimeLineViewController.swift in Sources */,
 				6C22FD041B711DB800D0A943 /* AppDelegate.swift in Sources */,
 				6C22FD371B73BA3A00D0A943 /* DetailViewController.swift in Sources */,
 			);

@@ -45,6 +45,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // Dispose of any resources that can be recreated.
   }
   
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    self.detailTableView.reloadData()
+  }
   
   
   
@@ -123,8 +127,6 @@ extension DetailViewController : UITableViewDataSource {
               
               
           }
-          
-          
         })
       }
      
@@ -168,12 +170,8 @@ extension DetailViewController : UITableViewDataSource {
               
               
           }
-          
-          
         })
       }
-      
-      
       
     // If it is a normal tweet, show its infos
     } else {
@@ -209,12 +207,9 @@ extension DetailViewController : UITableViewDataSource {
               }
               
               let resizedImage = ImageSizer.resizeImage(image, size: size)
-              
           }
-          
         })
       }
-      
     }
     
     
@@ -224,6 +219,8 @@ extension DetailViewController : UITableViewDataSource {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
     self.performSegueWithIdentifier("moveFromDetailVCtoNextVC", sender: nil)
+    
+    
   }
 
   
