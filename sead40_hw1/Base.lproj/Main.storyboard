@@ -210,6 +210,7 @@
                         <outlet property="userTimeLineText" destination="BIu-FJ-zFi" id="KH1-9O-hI8"/>
                         <outlet property="userTimeLineUsername" destination="TCH-Db-6l0" id="eeI-rZ-lO6"/>
                         <outlet property="userTimeLineView" destination="Aoj-iN-9vg" id="adK-AH-oih"/>
+                        <outlet property="userTimeLineViewTableView" destination="gPH-zY-9aC" id="NAk-dd-C2S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPX-Aq-EUn" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -22,10 +22,22 @@ class UserTimeLineViewController: UIViewController {
   @IBOutlet weak var userTimeLineText: UILabel!
   @IBOutlet weak var userTimeLineImageView: UIImageView!
   
+  @IBOutlet weak var userTimeLineViewTableView: UITableView!
   
     override func viewDidLoad() {
         super.viewDidLoad()
       
+      // Remove the label text
+      self.userTimeLineLabel.text = ""
+      self.userTimeLineUsername.text = ""
+      self.userTimeLineText.text = ""
+      
+      let nibName = UINib(nibName: "TweetCellTemplate", bundle:nil)
+      //    if let detailCellView = NSBundle.mainBundle().loadNibNamed("TweetCellTemplate", owner: self, options: nil).first as? DetailCell {
+      //      view.addSubview(detailCellView)
+      //    }
+      
+      self.userTimeLineViewTableView.registerNib(nibName, forCellReuseIdentifier: "DetailCell")
       
         // Do any additional setup after loading the view
       // Access the TwitterService - Handler: After access an account check for error and tweets
