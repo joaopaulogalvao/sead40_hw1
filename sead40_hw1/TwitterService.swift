@@ -61,7 +61,7 @@ class TwitterService {
     //Request user information
     let requestTweetsFromUser = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/user_timeline.json?username=\(screen_name)")!, parameters: userTimeLineCount)
     
-    //requestTweetsFromUser.account = self.sharedService.account
+    requestTweetsFromUser.account = self.sharedService.account
     
     //Perform an asychronous request
     requestTweetsFromUser.performRequestWithHandler { (data , response, error) -> Void in
