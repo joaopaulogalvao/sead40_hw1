@@ -56,41 +56,41 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   // MARK: - Navigation
   
   // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
-    if segue.identifier == "moveFromDetailVCtoNextVC" {
-      
-      if let userTimelineViewController = segue.destinationViewController as? UserTimeLineViewController {
-        
-        //grab the selected indexPath from the TableView
-        if let mySelectedIndexPath = self.detailTableView.indexPathForSelectedRow() {
-          
-          let selectedRow = mySelectedIndexPath.row
-          
-          //grab the selected person using the indexPath as the index in the players array
-          let selectedTweet = self.selectedDetail[selectedRow]
-          
-          println("Row \(mySelectedIndexPath.row) selected")
-        }
-        
-      }
-      
-    }
-    
-  }
+//  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {   
+//  }
   
 }
 
   // MARK: - UITableViewDelegate
 extension DetailViewController : UITableViewDelegate {
   
-//  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//    
-//    self.performSegueWithIdentifier("moveFromDetailVCtoNextVC", sender: nil)
-//    
-//
-//  }
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    
+    if let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileView") as? UserTimeLineViewController {
+      
+      //grab the selected indexPath from the TableView
+      if let mySelectedIndexPath = self.detailTableView.indexPathForSelectedRow() {
+        
+        let selectedRow = mySelectedIndexPath.row
+        
+        //grab the selected person using the indexPath as the index in the players array
+        let selectedTweet = self.selectedTweet
+        
+        println("Row \(mySelectedIndexPath.row) selected")
+        
+        vc.selectedScreenName = self.selectedTweet
+        
+        println(self.selectedTweet)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+      }
+      
+    }
+  }
+  
   
 }
 

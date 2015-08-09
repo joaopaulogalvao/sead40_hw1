@@ -121,7 +121,7 @@
                     </view>
                     <connections>
                         <outlet property="detailTableView" destination="KEB-kO-tVO" id="7bx-Ti-ek1"/>
-                        <segue destination="Eec-tg-KMh" kind="show" identifier="moveFromDetailVCtoNextVC" id="Cnd-ra-8Xa"/>
+                        <segue destination="Eec-tg-KMh" kind="show" identifier="toUserTimeline" id="Cnd-ra-8Xa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76c-u8-kYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
