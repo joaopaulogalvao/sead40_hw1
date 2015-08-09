@@ -24,7 +24,7 @@ class UserTimeLineViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
       
         // Do any additional setup after loading the view
       // Access the TwitterService - Handler: After access an account check for error and tweets
@@ -35,6 +35,7 @@ class UserTimeLineViewController: UIViewController {
         if let tweets = tweets {
           
           //Send tweets to the mainQueue/Thread
+          self.userTimeLineLabel.text = self.selectedScreenName?.username
           NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
             self.tweets = tweets
             

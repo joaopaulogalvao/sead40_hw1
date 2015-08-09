@@ -56,18 +56,26 @@ class TwitterService {
   // Function that access tweets from user timeline
   class func tweetsFromUserTimeLine(screen_name: Tweet, completionHandler : (String?, [Tweet]?) -> (Void)) {
     
+    // "https://api.twitter.com/1.1/statuses/user_timeline.json?username=\(screen_name)")!
+    
     var userTimeLineCount : [String : AnyObject]
     userTimeLineCount = ["count" : "50"]
-    var userTimelineAccountStore = ACAccountStore()
-    let userAccountType = userTimelineAccountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+    
+    let parameters = ["screen_name": "Tweet"]
+//    var userTimelineAccountStore = ACAccountStore()
+//    let userAccountType = userTimelineAccountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
     
     //Request user information
-    let requestTweetsFromUser = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/user_timeline.json?username=\(screen_name)")!, parameters: userTimeLineCount)
+    let requestTweetsFromUser = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/user_timeline.json")!, parameters: parameters)
     
-    //New instance for userAccount
-    let userAccount : ACAccount = userTimelineAccountStore.accountsWithAccountType(userAccountType)[0] as! ACAccount
+//    //New instance for userAccount
+//    let userAccount : ACAccount = userTimelineAccountStore.accountsWithAccountType(userAccountType)[0] as! ACAccount
+//    
+//    requestTweetsFromUser.account = userAccount
     
-    requestTweetsFromUser.account = userAccount
+    
+    requestTweetsFromUser.account = self.sharedService.account
+    println(self.sharedService.account)
     
     //Perform an asychronous request
     requestTweetsFromUser.performRequestWithHandler { (data , response, error) -> Void in
