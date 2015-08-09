@@ -38,6 +38,7 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITab
       
       
       self.userTimeLineViewTableView.delegate = self
+      self.userTimeLineViewTableView.dataSource = self
       
       
         // Do any additional setup after loading the view
@@ -84,6 +85,23 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITab
     // MARK: - UITableViewDataSource
 extension UserTimeLineViewController : UITableViewDataSource {
   
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 1
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    let userCell = tableView.dequeueReusableCellWithIdentifier("DetailCell", forIndexPath: indexPath) as! DetailCell
+    
+    var tweetsFromUser = tweets[indexPath.row]
+    
+    userCell.userLabel.text = tweetsFromUser.username
+    
+    
+    println(tweetsFromUser)
+    
+    return userCell
+  }
 }
 
 
