@@ -20,6 +20,7 @@ class UserTimeLineViewController: UIViewController {
   @IBOutlet weak var userTimeLineLabel: UILabel!
   @IBOutlet weak var userTimeLineUsername: UILabel!
   @IBOutlet weak var userTimeLineText: UILabel!
+  @IBOutlet weak var userTimeLineImageView: UIImageView!
   
   
     override func viewDidLoad() {
@@ -35,9 +36,14 @@ class UserTimeLineViewController: UIViewController {
         if let tweets = tweets {
           
           //Send tweets to the mainQueue/Thread
-          self.userTimeLineLabel.text = self.selectedScreenName?.username
+          
           NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
             self.tweets = tweets
+            self.userTimeLineLabel.text = self.selectedScreenName?.username
+            self.userTimeLineUsername.text = self.selectedScreenName?.userAddress
+            self.userTimeLineText.text = self.selectedScreenName?.text
+            self.userTimeLineImageView.image = self.selectedScreenName?.profileImage
+            
             
           })
         }

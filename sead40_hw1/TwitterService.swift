@@ -68,11 +68,6 @@ class TwitterService {
     //Request user information
     let requestTweetsFromUser = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/user_timeline.json")!, parameters: parameters)
     
-//    //New instance for userAccount
-//    let userAccount : ACAccount = userTimelineAccountStore.accountsWithAccountType(userAccountType)[0] as! ACAccount
-//    
-//    requestTweetsFromUser.account = userAccount
-    
     
     requestTweetsFromUser.account = self.sharedService.account
     println(self.sharedService.account)
