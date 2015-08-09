@@ -14,6 +14,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   
   
   var selectedTweet : Tweet?
+  var selectedDetail = [Tweet]()
   lazy var retweetImageQueue = NSOperationQueue()
   
   
@@ -60,25 +61,23 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   // Pass the selected object to the new view controller.
     if segue.identifier == "moveFromDetailVCtoNextVC" {
       
-      if let userTimeLineViewController = segue.destinationViewController as? UserTimeLineViewController {
+      if let userTimelineViewController = segue.destinationViewController as? UserTimeLineViewController {
         
         //grab the selected indexPath from the TableView
-        let mySelectedIndexPath = self.detailTableView.indexPathForSelectedRow()
-        
-        if let selectedIndexPath = self.detailTableView.indexPathForSelectedRow() {
+        if let mySelectedIndexPath = self.detailTableView.indexPathForSelectedRow() {
           
-          let selectedRow = selectedIndexPath.row
+          let selectedRow = mySelectedIndexPath.row
           
           //grab the selected person using the indexPath as the index in the players array
-          let screeName = selectedTweet
+          let selectedTweet = self.selectedDetail[selectedRow]
           
-          //Set destinationViewController player propery to reference the selected player
-          userTimeLineViewController.userSelected = selectedTweet
-          
+          println("Row \(mySelectedIndexPath.row) selected")
         }
         
       }
       
+      
+      segue.destinationViewController
     }
     
   }
@@ -86,6 +85,17 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 }
 
   // MARK: - UITableViewDelegate
+extension DetailViewController : UITableViewDelegate {
+  
+//  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//    
+//    self.performSegueWithIdentifier("moveFromDetailVCtoNextVC", sender: nil)
+//    
+//
+//  }
+  
+}
+
 
   // MARK: - UITableViewDataSource
 extension DetailViewController : UITableViewDataSource {
@@ -236,14 +246,6 @@ extension DetailViewController : UITableViewDataSource {
     
     return detailCell
   }
-  
-//  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//
-//    self.performSegueWithIdentifier("moveFromDetailVCtoNextVC", sender: nil)
-//    
-//    
-//  }
-
   
 }
 
