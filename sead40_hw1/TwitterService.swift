@@ -61,7 +61,7 @@ class TwitterService {
     var userTimeLineCount : [String : AnyObject]
     userTimeLineCount = ["count" : "50"]
     
-    let parameters = ["screen_name": "Tweet"]
+    let parameters = ["screen_name": "Tweet", "count" : "10"]
 //    var userTimelineAccountStore = ACAccountStore()
 //    let userAccountType = userTimelineAccountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
     

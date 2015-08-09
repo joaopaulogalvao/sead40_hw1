@@ -16,6 +16,8 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITab
   var selectedScreenName : Tweet?
   var screen_name : String?
   
+  lazy var userImageQueue = NSOperationQueue()
+  
   @IBOutlet weak var userTimeLineView: UIView!
   @IBOutlet weak var userTimeLineLabel: UILabel!
   @IBOutlet weak var userTimeLineUsername: UILabel!
@@ -36,7 +38,12 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITab
       
       self.userTimeLineViewTableView.registerNib(nibName, forCellReuseIdentifier: "DetailCell")
       
+//      if let userViewCell = NSBundle.mainBundle().loadNibNamed("TweetCellTemplate", owner: self, options: nil).first as? DetailCell {
+//        view.addSubview(userViewCell)
+//      }
       
+      
+      self.view.constraints()
       self.userTimeLineViewTableView.delegate = self
       self.userTimeLineViewTableView.dataSource = self
       
@@ -57,6 +64,9 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITab
             self.userTimeLineUsername.text = self.selectedScreenName?.userAddress
             self.userTimeLineText.text = self.selectedScreenName?.text
             self.userTimeLineImageView.image = self.selectedScreenName?.profileImage
+            
+            self.userTimeLineViewTableView.estimatedRowHeight = 100
+            self.userTimeLineViewTableView.rowHeight = UITableViewAutomaticDimension
             self.userTimeLineViewTableView.reloadData()
             
           })
@@ -91,11 +101,19 @@ extension UserTimeLineViewController : UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
+    
     let userCell = tableView.dequeueReusableCellWithIdentifier("DetailCell", forIndexPath: indexPath) as! DetailCell
     
     var tweetsFromUser = self.tweets[indexPath.row]
     
+    userCell.retweetedByLabel.hidden = true
+    userCell.retweetedByText.hidden = true
+    userCell.userLabel.hidden = true
+    userCell.userAddress.hidden = true
+    userCell.retweetedBtnImg.hidden = true
+    
     userCell.tweetTextLabel.text = tweetsFromUser.text
+    
     
     
     println(userCell.userLabel.text)
