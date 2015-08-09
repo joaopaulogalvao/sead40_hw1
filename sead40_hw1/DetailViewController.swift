@@ -76,8 +76,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
       }
       
-      
-      segue.destinationViewController
     }
     
   }
