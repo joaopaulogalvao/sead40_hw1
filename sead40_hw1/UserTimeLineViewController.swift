@@ -10,7 +10,7 @@ import UIKit
 import Accounts
 import Social
 
-class UserTimeLineViewController: UIViewController {
+class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   var tweets = [Tweet]()
   var selectedScreenName : Tweet?
@@ -33,11 +33,12 @@ class UserTimeLineViewController: UIViewController {
       self.userTimeLineText.text = ""
       
       let nibName = UINib(nibName: "TweetCellTemplate", bundle:nil)
-      //    if let detailCellView = NSBundle.mainBundle().loadNibNamed("TweetCellTemplate", owner: self, options: nil).first as? DetailCell {
-      //      view.addSubview(detailCellView)
-      //    }
       
       self.userTimeLineViewTableView.registerNib(nibName, forCellReuseIdentifier: "DetailCell")
+      
+      
+      self.userTimeLineViewTableView.delegate = self
+      
       
         // Do any additional setup after loading the view
       // Access the TwitterService - Handler: After access an account check for error and tweets
@@ -79,3 +80,13 @@ class UserTimeLineViewController: UIViewController {
     */
 
 }
+
+    // MARK: - UITableViewDataSource
+extension UserTimeLineViewController : UITableViewDataSource {
+  
+}
+
+
+
+
+
