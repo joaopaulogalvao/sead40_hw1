@@ -57,7 +57,7 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITab
             self.userTimeLineUsername.text = self.selectedScreenName?.userAddress
             self.userTimeLineText.text = self.selectedScreenName?.text
             self.userTimeLineImageView.image = self.selectedScreenName?.profileImage
-            
+            self.userTimeLineViewTableView.reloadData()
             
           })
         }
@@ -86,19 +86,19 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITab
 extension UserTimeLineViewController : UITableViewDataSource {
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return self.tweets.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
     let userCell = tableView.dequeueReusableCellWithIdentifier("DetailCell", forIndexPath: indexPath) as! DetailCell
     
-    var tweetsFromUser = tweets[indexPath.row]
+    var tweetsFromUser = self.tweets[indexPath.row]
     
-    userCell.userLabel.text = tweetsFromUser.username
+    userCell.tweetTextLabel.text = tweetsFromUser.text
     
     
-    println(tweetsFromUser)
+    println(userCell.userLabel.text)
     
     return userCell
   }
