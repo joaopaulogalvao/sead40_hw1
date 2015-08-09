@@ -16,6 +16,7 @@ class TwitterService {
   
   var account: ACAccount?
   
+  
   private init() {}
   
   // Function that access
@@ -57,11 +58,16 @@ class TwitterService {
     
     var userTimeLineCount : [String : AnyObject]
     userTimeLineCount = ["count" : "50"]
+    var userTimelineAccountStore = ACAccountStore()
+    let userAccountType = userTimelineAccountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
     
     //Request user information
     let requestTweetsFromUser = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/user_timeline.json?username=\(screen_name)")!, parameters: userTimeLineCount)
     
-    requestTweetsFromUser.account = self.sharedService.account
+    //New instance for userAccount
+    let userAccount : ACAccount = userTimelineAccountStore.accountsWithAccountType(userAccountType)[0] as! ACAccount
+    
+    requestTweetsFromUser.account = userAccount
     
     //Perform an asychronous request
     requestTweetsFromUser.performRequestWithHandler { (data , response, error) -> Void in
