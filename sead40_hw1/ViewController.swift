@@ -14,11 +14,17 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
   @IBOutlet weak var tableview: UITableView!
   
   var tweets = [Tweet]()
+  var refreshControl : UIRefreshControl!
   lazy var imageQueue = NSOperationQueue()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.refreshControl = UIRefreshControl()
+    self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+    self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+    self.tableview.addSubview(refreshControl)
     
   
     tableview.estimatedRowHeight = 100
@@ -83,6 +89,28 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
 //      }
 //    }
   }
+  
+  func refresh(sender: AnyObject){
+
+      
+      // Access the TwitterService - Handler: After access an account check for error and tweets
+      TwitterService.tweetsFromHomeTimeline({ (errorDescription, tweets) -> (Void) in
+        //After checking - If I had left just a println(tweets) without setting a switch case in my TwitterService it would have returned a code 200. As anything else other than an error would return any code. I hadn't done the else and the switch case inside it by that moment.
+        //println(tweets)
+        
+        //Handle existing tweets
+        if let tweets = tweets {
+          
+          //Send tweets to the mainQueue/Thread
+          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            self.tweets = tweets
+            self.tableview.reloadData()
+            self.refreshControl.endRefreshing()
+          })
+        }
+      })
+    
+  }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -98,6 +126,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
   func updateLabels() {
     
     self.tableview.reloadData()
+
     
   }
 
