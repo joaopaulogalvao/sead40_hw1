@@ -84,6 +84,7 @@ extension DetailViewController : UITableViewDelegate {
         vc.screen_name = selectedTweet?.screen_name
         vc.selectedScreenName = self.selectedTweet
         
+        
         println(self.selectedTweet)
         
         self.navigationController?.pushViewController(vc, animated: true)

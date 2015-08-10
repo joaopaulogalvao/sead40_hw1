@@ -104,6 +104,9 @@ extension UserTimeLineViewController : UITableViewDataSource {
     
     let userCell = tableView.dequeueReusableCellWithIdentifier("DetailCell", forIndexPath: indexPath) as! DetailCell
     
+    userCell.tag++
+    let tag = userCell.tag
+    
     var tweetsFromUser = self.tweets[indexPath.row]
     
     userCell.retweetedByLabel.hidden = true
@@ -114,6 +117,49 @@ extension UserTimeLineViewController : UITableViewDataSource {
     
     userCell.tweetTextLabel.text = tweetsFromUser.text
     
+    if let profileImage = self.selectedScreenName?.profileImage {
+      
+      userCell.retweetedBtnImg.setBackgroundImage(profileImage, forState: UIControlState.Normal)
+      
+      
+    } else {
+      
+      
+      //Only load when needed
+      userImageQueue.addOperationWithBlock({ () -> Void in
+        //Check if there is an URL, Data and image
+        if let imageURL = NSURL(string: self.selectedScreenName!.profileImageURL),
+          data = NSData(contentsOfURL: imageURL),
+          image = UIImage(data: data){
+            
+            //Check for image size depending on resolution
+            var size : CGSize
+            switch UIScreen.mainScreen().scale {
+            case 2:
+              size = CGSize(width: 160, height: 160)
+            case 3:
+              size = CGSize(width: 240, height: 240)
+              println("Size 240")
+            default:
+              size = CGSize(width: 80, height: 80)
+              println("default")
+            }
+            
+            let resizedImage = ImageSizer.resizeImage(image, size: size)
+            
+            // Send operation back to the main Queue
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+              tweetsFromUser.profileImage = resizedImage
+              self.tweets[indexPath.row] = tweetsFromUser
+              if userCell.tag == tag {
+                userCell.retweetedBtnImg.imageView?.image = resizedImage
+              }
+            })
+            
+        }
+      })
+      
+    }
     
     
     println(userCell.userLabel.text)
