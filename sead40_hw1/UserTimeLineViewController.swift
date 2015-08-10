@@ -14,7 +14,7 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITab
 
   var tweets = [Tweet]()
   var selectedScreenName : Tweet?
-  var screen_name : String!
+  var screen_name : String?
   
   lazy var userImageQueue = NSOperationQueue()
   

@@ -20,6 +20,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
+  
     tableview.estimatedRowHeight = 100
     tableview.rowHeight = UITableViewAutomaticDimension
     

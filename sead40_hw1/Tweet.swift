@@ -20,6 +20,8 @@ struct Tweet {
   var quotedTweet : [String : AnyObject]?
   var originalUser : String?
   
+  var screen_name : String?
+  
   var retweetText : String?
   var retweetedFrom : String?
   var retweetedUserAddress : String?
