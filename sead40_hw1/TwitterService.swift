@@ -54,14 +54,14 @@ class TwitterService {
   }
   
   // Function that access tweets from user timeline
-  class func tweetsFromUserTimeLine(screen_name: String, completionHandler : (String?, [Tweet]?) -> (Void)) {
+  class func tweetsFromUserTimeLine(screen_name: String,id: String, completionHandler : (String?, [Tweet]?) -> (Void)) {
     
     // "https://api.twitter.com/1.1/statuses/user_timeline.json?username=\(screen_name)")!
     
     var userTimeLineCount : [String : AnyObject]
     userTimeLineCount = ["count" : "50"]
     
-    let parameters = ["screen_name": screen_name, "count" : "25"]
+    let parameters = ["screen_name": screen_name, "count" : "25", "max_id": id]
 //    var userTimelineAccountStore = ACAccountStore()
 //    let userAccountType = userTimelineAccountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
     

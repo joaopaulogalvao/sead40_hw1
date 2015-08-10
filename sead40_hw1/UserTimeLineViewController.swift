@@ -15,6 +15,7 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITab
   var tweets = [Tweet]()
   var selectedScreenName : Tweet?
   var screen_name : String?
+  var id : String?
   
   lazy var userImageQueue = NSOperationQueue()
   
@@ -50,9 +51,9 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITab
       
         // Do any additional setup after loading the view
       // Access the TwitterService - Handler: After access an account check for error and tweets
-      TwitterService.tweetsFromUserTimeLine(screen_name!, completionHandler: { (errorDescription, tweets) -> (Void) in
+      TwitterService.tweetsFromUserTimeLine( screen_name!,id: id!, completionHandler: { (errorDescription, tweets) -> (Void) in
         //After checking - If I had left just a println(tweets) without setting a switch case in my TwitterService it would have returned a code 200. As anything else other than an error would return any code. I hadn't done the else and the switch case inside it by that moment.
-        
+        println(self.id)
         //Handle existing tweets
         if let tweets = tweets {
           

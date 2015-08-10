@@ -82,6 +82,7 @@ extension DetailViewController : UITableViewDelegate {
         println("Row \(mySelectedIndexPath.row) selected")
         
         vc.screen_name = selectedTweet?.screen_name
+        vc.id = selectedTweet?.id
         vc.selectedScreenName = self.selectedTweet
         
         

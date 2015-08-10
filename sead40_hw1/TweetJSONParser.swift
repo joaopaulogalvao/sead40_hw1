@@ -27,8 +27,8 @@ class TweetJSONParser {
           
           //If they exist, create a tweet object with retweet as nil, for the compiler, as the Struct contains it
           var tweet =  Tweet(text: text, username: username, userAddress: userAddress, id: id, profileImageURL: profileImageURL, profileImage: nil, retweet: nil, quotedTweet: nil, originalUser: nil,screen_name: screen_name, retweetText: nil, retweetedFrom: nil, retweetedUserAddress: nil, quoteText: nil, quotedFrom: nil, quotedUserAddress: nil, isRetweet: false, isQuote: false)
-          
 
+          println(tweet)
           
           //Check if it is a retweet and access this dictionary data to get the key
           if let retweetDict = tweetObject["retweeted_status"] as? [String : AnyObject] {

@@ -57,7 +57,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
           
           //Handle existing tweets
           if let tweets = tweets {
-            
             //Send tweets to the mainQueue/Thread
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
               self.tweets = tweets
@@ -68,7 +67,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
       }
     }
     
-    self.view.constraints()
+    //self.view.constraints()
     
     tableview.dataSource = self
     tableview.delegate = self
