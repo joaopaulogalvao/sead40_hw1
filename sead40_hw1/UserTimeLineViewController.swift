@@ -41,7 +41,7 @@ class UserTimeLineViewController: UIViewController, UITableViewDataSource, UITab
 //      if let userViewCell = NSBundle.mainBundle().loadNibNamed("TweetCellTemplate", owner: self, options: nil).first as? DetailCell {
 //        view.addSubview(userViewCell)
 //      }
-      
+      self.userTimeLineLabel.text = self.selectedScreenName?.userAddress
       
       self.view.constraints()
       self.userTimeLineViewTableView.delegate = self
@@ -110,7 +110,7 @@ extension UserTimeLineViewController : UITableViewDataSource {
     userCell.retweetedByText.hidden = true
     userCell.userLabel.hidden = true
     userCell.userAddress.hidden = true
-    userCell.retweetedBtnImg.hidden = true
+    //userCell.retweetedBtnImg.hidden = true
     
     userCell.tweetTextLabel.text = tweetsFromUser.text
     
